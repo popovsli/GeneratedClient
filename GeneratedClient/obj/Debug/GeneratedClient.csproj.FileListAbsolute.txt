@@ -1,0 +1,6 @@
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\GeneratedClient\bin\Debug\GeneratedClient.exe.config
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\GeneratedClient\bin\Debug\GeneratedClient.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\GeneratedClient\bin\Debug\GeneratedClient.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\GeneratedClient\obj\Debug\GeneratedClient.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\GeneratedClient\obj\Debug\GeneratedClient.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\GeneratedClient\obj\Debug\GeneratedClient.csprojResolveAssemblyReference.cache

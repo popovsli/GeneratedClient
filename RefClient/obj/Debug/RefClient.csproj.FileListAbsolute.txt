@@ -1,0 +1,6 @@
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\RefClient\bin\Debug\RefClient.exe.config
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\RefClient\bin\Debug\RefClient.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\RefClient\bin\Debug\RefClient.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\RefClient\obj\Debug\RefClient.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\RefClient\obj\Debug\RefClient.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\RefClient\obj\Debug\RefClient.csprojResolveAssemblyReference.cache

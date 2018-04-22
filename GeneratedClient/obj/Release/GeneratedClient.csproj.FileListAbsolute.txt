@@ -1,0 +1,5 @@
+c:\users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\GeneratedClient\bin\Release\GeneratedClient.exe.config
+c:\users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\GeneratedClient\bin\Release\GeneratedClient.exe
+c:\users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\GeneratedClient\bin\Release\GeneratedClient.pdb
+c:\users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\GeneratedClient\obj\Release\GeneratedClient.exe
+c:\users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\GeneratedClient\obj\Release\GeneratedClient.pdb

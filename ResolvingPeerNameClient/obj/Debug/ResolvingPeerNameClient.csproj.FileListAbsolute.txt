@@ -1,0 +1,6 @@
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\ResolvingPeerNameClient\bin\Debug\ResolvingPeerNameClient.exe.config
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\ResolvingPeerNameClient\bin\Debug\ResolvingPeerNameClient.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\ResolvingPeerNameClient\bin\Debug\ResolvingPeerNameClient.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\ResolvingPeerNameClient\obj\Debug\ResolvingPeerNameClient.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\ResolvingPeerNameClient\obj\Debug\ResolvingPeerNameClient.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\ResolvingPeerNameClient\obj\Debug\ResolvingPeerNameClient.csprojResolveAssemblyReference.cache

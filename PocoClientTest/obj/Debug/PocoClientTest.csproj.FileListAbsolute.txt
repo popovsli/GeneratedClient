@@ -1,0 +1,6 @@
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\PocoClientTest\bin\Debug\PocoClientTest.exe.config
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\PocoClientTest\bin\Debug\PocoClientTest.exe
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\PocoClientTest\bin\Debug\PocoClientTest.pdb
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\PocoClientTest\obj\Debug\PocoClientTest.csprojResolveAssemblyReference.cache
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\PocoClientTest\obj\Debug\PocoClientTest.exe
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\PocoClientTest\obj\Debug\PocoClientTest.pdb

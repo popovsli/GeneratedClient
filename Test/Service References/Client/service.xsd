@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://microsoft.com/wsdl/types/" />
+  <xs:element name="GetAllPersons">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="GetAllPersonsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetAllPersonsResult" type="tns:ArrayOfPersonDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfPersonDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonDTO" nillable="true" type="tns:PersonDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonDTO">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="BusinessEntityID" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PersonType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NameStyle" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Title" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FirstName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MiddleName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LastName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Suffix" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EmailPromotion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AdditionalContactInfo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Demographics" type="xs:string" />
+      <xs:element xmlns:q1="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="rowguid" type="q1:guid" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ModifiedDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,6 @@
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\WCFClientConcurrencyAndInstancing\bin\Debug\WCFClientConcurrencyAndInstancing.exe.config
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\WCFClientConcurrencyAndInstancing\bin\Debug\WCFClientConcurrencyAndInstancing.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\WCFClientConcurrencyAndInstancing\bin\Debug\WCFClientConcurrencyAndInstancing.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\WCFClientConcurrencyAndInstancing\obj\Debug\WCFClientConcurrencyAndInstancing.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\WCFClientConcurrencyAndInstancing\obj\Debug\WCFClientConcurrencyAndInstancing.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\WCFClientConcurrencyAndInstancing\obj\Debug\WCFClientConcurrencyAndInstancing.csprojResolveAssemblyReference.cache

@@ -1,0 +1,6 @@
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\Bindings\bin\Debug\Bindings.exe.config
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\Bindings\bin\Debug\Bindings.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\Bindings\bin\Debug\Bindings.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\Bindings\obj\Debug\Bindings.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\Bindings\obj\Debug\Bindings.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\Bindings\obj\Debug\Bindings.csprojResolveAssemblyReference.cache

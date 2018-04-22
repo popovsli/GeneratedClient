@@ -1,0 +1,6 @@
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\MultipleEndpointClient\bin\Debug\MultipleEndpointClient.exe.config
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\MultipleEndpointClient\bin\Debug\MultipleEndpointClient.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\MultipleEndpointClient\bin\Debug\MultipleEndpointClient.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\MultipleEndpointClient\obj\Debug\MultipleEndpointClient.csprojResolveAssemblyReference.cache
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\MultipleEndpointClient\obj\Debug\MultipleEndpointClient.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\MultipleEndpointClient\obj\Debug\MultipleEndpointClient.pdb

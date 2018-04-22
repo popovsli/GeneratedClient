@@ -1,0 +1,10 @@
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\Test\bin\Debug\Test.exe.config
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\Test\bin\Debug\Test.exe
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\Test\bin\Debug\Test.pdb
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\Test\bin\Debug\WinRTSync.DinamicEncoder.dll
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\Test\bin\Debug\Microsoft.Services.Midabase.dll
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\Test\bin\Debug\WinRTSync.DinamicEncoder.pdb
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\Test\bin\Debug\Microsoft.Services.Midabase.pdb
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\Test\obj\Debug\Test.exe
+C:\Users\nrpopov\Documents\Visual Studio 2013\Projects\GeneratedClient\Test\obj\Debug\Test.pdb

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://rwsreftool/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rwsreftool/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://rwsreftool/Imports">
+      <xsd:import namespace="http://rwsreftool/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="matchByCodeRequest">
+    <wsdl:part name="matchByCode" element="tns:matchByCode" />
+  </wsdl:message>
+  <wsdl:message name="matchByCodeResponse1">
+    <wsdl:part name="matchByCodeResponse" element="tns:matchByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRefService_matchByCode_exception_FaultMessage">
+    <wsdl:part name="detail" element="tns:exception" />
+  </wsdl:message>
+  <wsdl:message name="matchByNameRequest">
+    <wsdl:part name="matchByName" element="tns:matchByName" />
+  </wsdl:message>
+  <wsdl:message name="matchByNameResponse1">
+    <wsdl:part name="matchByNameResponse" element="tns:matchByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRefService_matchByName_exception_FaultMessage">
+    <wsdl:part name="detail" element="tns:exception" />
+  </wsdl:message>
+  <wsdl:message name="getMutationsRequest">
+    <wsdl:part name="getMutations" element="tns:getMutations" />
+  </wsdl:message>
+  <wsdl:message name="getMutationsResponse1">
+    <wsdl:part name="getMutationsResponse" element="tns:getMutationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRefService_getMutations_exception_FaultMessage">
+    <wsdl:part name="detail" element="tns:exception" />
+  </wsdl:message>
+  <wsdl:message name="getDataXMLRequest">
+    <wsdl:part name="getDataXML" element="tns:getDataXML" />
+  </wsdl:message>
+  <wsdl:message name="getDataXMLResponse1">
+    <wsdl:part name="getDataXMLResponse" element="tns:getDataXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRefService_getDataXML_exception_FaultMessage">
+    <wsdl:part name="detail" element="tns:exception" />
+  </wsdl:message>
+  <wsdl:message name="getRisDataXMLRequest">
+    <wsdl:part name="getRisDataXML" element="tns:getRisDataXML" />
+  </wsdl:message>
+  <wsdl:message name="getRisDataXMLResponse1">
+    <wsdl:part name="getRisDataXMLResponse" element="tns:getRisDataXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRefService_getRisDataXML_exception_FaultMessage">
+    <wsdl:part name="detail" element="tns:exception" />
+  </wsdl:message>
+  <wsdl:message name="mutateDataXMLRequest">
+    <wsdl:part name="mutateDataXML" element="tns:mutateDataXML" />
+  </wsdl:message>
+  <wsdl:message name="mutateDataXMLResponse1">
+    <wsdl:part name="mutateDataXMLResponse" element="tns:mutateDataXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRefService_mutateDataXML_exception_FaultMessage">
+    <wsdl:part name="detail" element="tns:exception" />
+  </wsdl:message>
+  <wsdl:portType name="IRefService">
+    <wsdl:operation name="matchByCode">
+      <wsdl:input wsaw:Action="http://rwsreftool/IRefService/matchByCode" name="matchByCodeRequest" message="tns:matchByCodeRequest" />
+      <wsdl:output wsaw:Action="http://rwsreftool/IRefService/matchByCodeResponse" name="matchByCodeResponse1" message="tns:matchByCodeResponse1" />
+      <wsdl:fault wsaw:Action="" name="exception" message="tns:IRefService_matchByCode_exception_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="matchByName">
+      <wsdl:input wsaw:Action="http://rwsreftool/IRefService/matchByName" name="matchByNameRequest" message="tns:matchByNameRequest" />
+      <wsdl:output wsaw:Action="http://rwsreftool/IRefService/matchByNameResponse" name="matchByNameResponse1" message="tns:matchByNameResponse1" />
+      <wsdl:fault wsaw:Action="" name="exception" message="tns:IRefService_matchByName_exception_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMutations">
+      <wsdl:input wsaw:Action="http://rwsreftool/IRefService/getMutations" name="getMutationsRequest" message="tns:getMutationsRequest" />
+      <wsdl:output wsaw:Action="http://rwsreftool/IRefService/getMutationsResponse" name="getMutationsResponse1" message="tns:getMutationsResponse1" />
+      <wsdl:fault wsaw:Action="" name="exception" message="tns:IRefService_getMutations_exception_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataXML">
+      <wsdl:input wsaw:Action="http://rwsreftool/IRefService/getDataXML" name="getDataXMLRequest" message="tns:getDataXMLRequest" />
+      <wsdl:output wsaw:Action="http://rwsreftool/IRefService/getDataXMLResponse" name="getDataXMLResponse1" message="tns:getDataXMLResponse1" />
+      <wsdl:fault wsaw:Action="" name="exception" message="tns:IRefService_getDataXML_exception_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRisDataXML">
+      <wsdl:input wsaw:Action="http://rwsreftool/IRefService/getRisDataXML" name="getRisDataXMLRequest" message="tns:getRisDataXMLRequest" />
+      <wsdl:output wsaw:Action="http://rwsreftool/IRefService/getRisDataXMLResponse" name="getRisDataXMLResponse1" message="tns:getRisDataXMLResponse1" />
+      <wsdl:fault wsaw:Action="" name="exception" message="tns:IRefService_getRisDataXML_exception_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mutateDataXML">
+      <wsdl:input wsaw:Action="http://rwsreftool/IRefService/mutateDataXML" name="mutateDataXMLRequest" message="tns:mutateDataXMLRequest" />
+      <wsdl:output wsaw:Action="http://rwsreftool/IRefService/mutateDataXMLResponse" name="mutateDataXMLResponse1" message="tns:mutateDataXMLResponse1" />
+      <wsdl:fault wsaw:Action="" name="exception" message="tns:IRefService_mutateDataXML_exception_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,773 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://rwsreftool/" elementFormDefault="qualified" targetNamespace="http://rwsreftool/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="matchByCode">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:matchByCodeType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="matchByCodeType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="reftype" type="tns:reftypeType" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="code" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="reftypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ris_idx" />
+      <xs:enumeration value="eri_location" />
+      <xs:enumeration value="eri_hscode" />
+      <xs:enumeration value="eri_adncode" />
+      <xs:enumeration value="eri_conttype" />
+      <xs:enumeration value="eri_packtype" />
+      <xs:enumeration value="eri_shiptype" />
+      <xs:enumeration value="eri_country" />
+      <xs:enumeration value="nts_barrage" />
+      <xs:enumeration value="nts_communication" />
+      <xs:enumeration value="nts_country" />
+      <xs:enumeration value="nts_direction" />
+      <xs:enumeration value="nts_direction_max" />
+      <xs:enumeration value="nts_direction_min" />
+      <xs:enumeration value="nts_ice_accessibility" />
+      <xs:enumeration value="nts_ice_condition" />
+      <xs:enumeration value="nts_ice_classification" />
+      <xs:enumeration value="nts_ice_situation" />
+      <xs:enumeration value="nts_indication" />
+      <xs:enumeration value="nts_interval" />
+      <xs:enumeration value="nts_language" />
+      <xs:enumeration value="nts_limitation" />
+      <xs:enumeration value="nts_measure" />
+      <xs:enumeration value="nts_position" />
+      <xs:enumeration value="nts_reason" />
+      <xs:enumeration value="nts_reference" />
+      <xs:enumeration value="nts_regime" />
+      <xs:enumeration value="nts_reporting" />
+      <xs:enumeration value="nts_subject" />
+      <xs:enumeration value="nts_tag" />
+      <xs:enumeration value="nts_target_group" />
+      <xs:enumeration value="nts_type" />
+      <xs:enumeration value="nts_weather_category" />
+      <xs:enumeration value="nts_weather_class" />
+      <xs:enumeration value="nts_weather_item" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="matchByCodeResponse">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:matchByCodeResponseType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="matchByCodeResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="recCount" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="refdataReturn" nillable="true" type="tns:refdataReturnType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="refdataReturnType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="reftype">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="tns:reftypeType" />
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="eri_location" type="tns:eri_locationType" />
+        <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="nts_data" type="tns:nts_dataType" />
+        <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ris_idx" type="tns:ris_idxType" />
+        <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="eri_packtype" type="tns:eri_packtypeType" />
+        <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="eri_shiptype" type="tns:eri_shiptypeType" />
+        <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="eri_adncode">
+          <xs:complexType>
+            <xs:complexContent mixed="false">
+              <xs:extension base="tns:eri_adncodeType" />
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="eri_conttype" type="tns:eri_conttypeType" />
+        <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="eri_country" type="tns:eri_countryType" />
+        <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="eri_hscode" type="tns:eri_hscodeType" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eri_locationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="erilocCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="codeOld" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="risCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="loCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="fwCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="termCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="kmCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="name">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="NL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DE" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EN" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="locType" type="xs:integer" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="termname">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="NL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DE" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EN" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="quayFrom" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="quayTo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="termType" type="xs:integer" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lat" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lon" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ivsVTSCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="exits" type="xs:integer" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="source" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="remarks" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="erased" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lastupdate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="nts_dataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ntstype" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ntscode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="codeOld" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="name">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="NL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DE" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EN" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="BG" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="CS" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DA" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ES" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ET" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FI" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="IT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RO" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SK" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SR" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="source" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="remarks" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="erased" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lastupdate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ris_idxType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="risidxCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="codeOld" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="unlocCC" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="unlocLC" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="wwsectCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="objcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="hectomt" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="objfunc" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="objname">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="locname">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="wwname">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="routename">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="relrisindex" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="sectionnode" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lat" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lon" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="relenc" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="startdate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="enddate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="infodate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="risidxRemarks" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="source" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="remarks" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="erased" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lastupdate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eri_packtypeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="packId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="codeOld" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="name">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="NL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DE" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EN" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="BG" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="CS" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DA" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ES" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ET" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FI" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="IT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RO" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SK" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SR" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="source" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="remarks" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="erased" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lastupdate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eri_shiptypeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="shipType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="codeOld" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="dvkType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="craftType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="combination" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="name">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="NL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DE" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EN" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="BG" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="CS" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DA" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ES" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ET" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FI" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="IT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RO" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SK" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SR" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="source" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="remarks" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="erased" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lastupdate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eri_adncodeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="adnCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="codeOld" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="unnr" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="adnClass" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="adnClassif" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="imoClass" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="packGrp" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="name">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="NL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DE" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EN" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="BG" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="CS" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DA" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ES" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ET" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FI" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="IT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RO" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SK" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SR" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="syn">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="NL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DE" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EN" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="BG" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="CS" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DA" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ES" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ET" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FI" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="IT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RO" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SK" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SR" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="hsCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="nstCode" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="conesBulk" type="tns:conesType" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="conesTank" type="tns:conesType" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="conesCont" type="tns:conesType" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="flagsBulk" type="tns:flagsType" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="flagsTank" type="tns:flagsType" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="warnCard" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="warnId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="label1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="label2" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="label3" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="maxWeightCodeInlandBulkCont" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="maxWeightInlandBulkCont" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="signalCodeInlandCont" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="minWeightInlandCont" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="signalCodeInlandExcemp" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="minWeightInlandExcemp" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="signalCodeSeaBulk" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="minWeightSeaBulk" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="source" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="remarks" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="erased" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lastupdate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="conesType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
+      <xs:enumeration value="V" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="flagsType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="B" />
+      <xs:enumeration value="V" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="eri_conttypeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="contId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="codeOld" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="length" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="width" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="height" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="weight" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="name">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="NL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DE" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EN" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="BG" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="CS" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DA" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ES" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ET" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FI" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="IT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RO" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SK" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SR" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="source" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="remarks" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="erased" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lastupdate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eri_countryType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="countryCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="codeOld" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="cbsCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="countryIsoCode3" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="countryIsoNum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="lloydsFlag" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="name">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="NL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DE" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EN" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="BG" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="CS" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DA" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ES" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ET" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FI" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="IT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RO" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SK" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SR" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="source" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="remarks" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="erased" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lastupdate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eri_hscodeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="hsCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="codeOld" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="name">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Loc" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="NL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DE" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EN" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="BG" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="CS" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="DA" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="EL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ES" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ET" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="FI" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="IT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="PT" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RO" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SK" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SL" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SV" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="HR" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="RU" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="SR" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="nstCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="nstName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="source" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="remarks" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="erased" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="lastupdate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="exception" type="tns:exceptionType" />
+  <xs:complexType name="exceptionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="exception" type="xs:integer" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="matchByName">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:matchByNameType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="matchByNameType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="reftype" type="tns:reftypeType" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="lang" type="tns:langType" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="langType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="%%" />
+      <xs:enumeration value="lc" />
+      <xs:enumeration value="nl" />
+      <xs:enumeration value="de" />
+      <xs:enumeration value="fr" />
+      <xs:enumeration value="en" />
+      <xs:enumeration value="bg" />
+      <xs:enumeration value="cs" />
+      <xs:enumeration value="da" />
+      <xs:enumeration value="el" />
+      <xs:enumeration value="es" />
+      <xs:enumeration value="et" />
+      <xs:enumeration value="fi" />
+      <xs:enumeration value="hu" />
+      <xs:enumeration value="it" />
+      <xs:enumeration value="lt" />
+      <xs:enumeration value="lv" />
+      <xs:enumeration value="pl" />
+      <xs:enumeration value="pt" />
+      <xs:enumeration value="ro" />
+      <xs:enumeration value="sk" />
+      <xs:enumeration value="sl" />
+      <xs:enumeration value="sv" />
+      <xs:enumeration value="hr" />
+      <xs:enumeration value="ru" />
+      <xs:enumeration value="sr" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="matchByNameResponse">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:matchByNameResponseType">
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="name" type="xs:string" />
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="matchByNameResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="recCount" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="refdataReturn" nillable="true" type="tns:refdataReturnType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getMutations">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:getMutationsType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="getMutationsType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="reftype" type="tns:reftypeType" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="fromDate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="toDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getMutationsResponse">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:getMutationsResponseType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="getMutationsResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="recCount" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="refdataReturn" nillable="true" type="tns:refdataReturnType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getDataXML">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:getDataXMLType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="getDataXMLType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="reftype" type="tns:reftypeType" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="subcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getDataXMLResponse">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:getDataXMLResponseType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="getDataXMLResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="recCount" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="refdataReturn" type="tns:refdataReturnType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getRisDataXML">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:getRisDataXMLType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="getRisDataXMLType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="subcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="funcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="version" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getRisDataXMLResponse">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:getRisDataXMLResponseType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="getRisDataXMLResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="recCount" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="risdataReturn" type="tns:ris_idxType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mutateDataXML">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:mutateDataXMLType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="mutateDataXMLType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="username" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="password" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="reftype" type="tns:reftypeType" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="refData" type="tns:refdataReturnType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mutateDataXMLResponse">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="tns:mutateDataXMLResponseType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="mutateDataXMLResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:statReturnType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="statReturnType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" form="unqualified" name="err">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="0" />
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestMutationXMLResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:statReturnType" />
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

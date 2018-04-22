@@ -1,0 +1,6 @@
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\StockQuoteServiceTcpBinding\bin\Debug\StockQuoteServiceTcpBinding.exe.config
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\StockQuoteServiceTcpBinding\bin\Debug\StockQuoteServiceTcpBinding.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\StockQuoteServiceTcpBinding\bin\Debug\StockQuoteServiceTcpBinding.pdb
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\StockQuoteServiceTcpBinding\obj\Debug\StockQuoteClientTcpBinding.csprojResolveAssemblyReference.cache
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\StockQuoteServiceTcpBinding\obj\Debug\StockQuoteServiceTcpBinding.exe
+C:\Users\nrpopov\documents\visual studio 2013\Projects\GeneratedClient\StockQuoteServiceTcpBinding\obj\Debug\StockQuoteServiceTcpBinding.pdb
